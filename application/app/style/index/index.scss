@@ -1,0 +1,356 @@
+@import '../mixins';
+@import '../variables';
+@import '../globals';
+@import '../components/buttons';
+@import '../components/footer';
+@import '../components/texts';
+
+//HERO
+.hero {
+  background: url('../../../public/images/bg-header-mobile.png') no-repeat center top;
+  background-size: 100%;
+
+  @media screen and (min-width: 730px) {
+    background: url('../../../public/images/bg-header-desktop.png') no-repeat center top;
+    background-size: 100%;
+  }
+
+  &__content {
+    padding-bottom: 100px;
+    padding-top: 100px;
+    min-height: 88vh;
+    place-content: center;
+  }
+
+  &__logo-area {
+    justify-content: center;
+    margin-bottom: rem(70);
+  }
+
+  &__text-area {
+    text-align: center;
+    margin-bottom: rem(50);
+
+    h1 {
+      margin-bottom: rem(28);
+    }
+  }
+
+  &__btn-area {
+    flex-direction: column;
+
+    @media screen and (min-width: 730px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 450px;
+      margin: auto;
+
+      @media screen and (min-width: 730px) {
+        width: 30%;
+        margin: 0;
+
+        &:first-child {
+          margin-right: rem(20);
+        }
+      }
+    }
+
+    .btn + .btn {
+      margin-top: rem(20);
+
+      @media screen and (min-width: 730px) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+//FEATURES
+.features {
+  margin: rem(60) 0;
+
+  &__content {
+    // min-height: 100vh;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 1000px) {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 350px;
+    }
+  }
+
+  &__text-area {
+    text-align: center;
+
+    @media screen and (min-width: 1000px) {
+      grid-column: 1 / 7;
+    }
+
+    h2 {
+      margin-bottom: rem(25);
+    }
+  }
+
+  &__img-area {
+    margin: rem(67) auto;
+    max-width: 700px;
+
+    @media screen and (min-width: 1000px) {
+      grid-column: 1 / 5;
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+
+      @media screen and (min-width: 1000px) {
+        width: 840px;
+        position: absolute;
+        left: -655px;
+        top: -120px;
+      }
+    }
+  }
+
+  &__features-list {
+    text-align: center;
+    list-style: none;
+
+    @media screen and (min-width: 1000px) {
+      grid-column: 5 / 7;
+      text-align: left;
+    }
+
+    .feature + .feature {
+      margin-top: rem(60);
+    }
+  }
+}
+
+.clipboard {
+  &__content {
+    margin-top: rem(140);
+    grid-template-columns: 1fr;
+    gap: rem(57);
+    transition: margin-top 0.3s ease;
+
+    @media screen and (min-width: 1000px) {
+      margin-top: rem(360);
+    }
+  }
+
+  &__text-area {
+    text-align: center;
+    // margin-bottom: rem(57);
+
+    h2 {
+      margin-bottom: rem(19);
+    }
+  }
+
+  &__img-area {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.other-features {
+  &__content {
+    margin-top: 100px;
+    gap: rem(80);
+  }
+
+  &__text-area {
+    text-align: center;
+
+    h2 {
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__features-list {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+
+    @media screen and (min-width: 1000px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    .feature + .feature {
+      margin-top: rem(55);
+
+      @media screen and (min-width: 1000px) {
+        margin-top: 0;
+      }
+    }
+
+    .feature {
+      @media screen and (min-width: 1000px) {
+        margin: 0 rem(10);
+      }
+
+      img {
+        margin-bottom: rem(45);
+
+        @media screen and (min-width: 1000px) {
+          height: 40px;
+        }
+      }
+
+      h3 {
+        margin-bottom: rem(14);
+      }
+    }
+  }
+}
+
+.sponsors {
+  &__content {
+    margin: rem(135) 0;
+
+    @media screen and (min-width: 1000px) {
+      margin: rem(165) 0;
+    }
+  }
+
+  &__companies {
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 500px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 700px) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @media screen and (min-width: 1100px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    img {
+      margin: auto;
+      width: 150px;
+      transition: grid-column 0.3s ease;
+
+      @media screen and (min-width: 500px) {
+        &:nth-child(2) {
+          margin: auto;
+        }
+
+        &:nth-child(5) {
+          grid-column: 1 / span 2;
+        }
+      }
+
+      @media screen and (min-width: 700px) {
+        &:nth-child(1) {
+          grid-column: 1 /3;
+        }
+
+        &:nth-child(2) {
+          margin: auto;
+          grid-column: 3 /5;
+        }
+
+        &:nth-child(3) {
+          margin: auto;
+          grid-column: 5 /7;
+        }
+
+        &:nth-child(4) {
+          grid-column: 2 / 4;
+        }
+
+        &:nth-child(5) {
+          grid-column: 4 /6;
+        }
+      }
+
+      @media screen and (min-width: 1100px) {
+        &:nth-child(1) {
+          grid-column: 1 /2;
+        }
+
+        &:nth-child(2) {
+          grid-column: 2 /3;
+        }
+
+        &:nth-child(3) {
+          grid-column: 3 /4;
+        }
+
+        &:nth-child(4) {
+          margin: auto;
+          grid-column: 4 /5;
+        }
+
+        &:nth-child(5) {
+          margin: auto;
+          grid-column: 5 /6;
+        }
+      }
+    }
+
+    img + img {
+      margin-top: rem(70);
+    }
+  }
+}
+
+.download {
+  &__content {
+    place-content: center;
+    margin-bottom: rem(100);
+  }
+
+  &__text-area {
+    text-align: center;
+    margin-bottom: rem(50);
+
+    h1 {
+      margin-bottom: rem(28);
+    }
+  }
+
+  &__btn-area {
+    flex-direction: column;
+
+    @media screen and (min-width: 730px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 450px;
+      margin: auto;
+
+      @media screen and (min-width: 730px) {
+        width: 33%;
+        margin: 0;
+
+        &:first-child {
+          margin-right: rem(20);
+        }
+      }
+    }
+
+    .btn + .btn {
+      margin-top: rem(20);
+
+      @media screen and (min-width: 730px) {
+        margin: 0;
+      }
+    }
+  }
+}
