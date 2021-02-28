@@ -1,0 +1,45 @@
+.btn-primary-green {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(55);
+  padding: rem(10);
+  text-decoration: none;
+  color: $White;
+  background: linear-gradient(to bottom, $StrongCyan 94%, #219d89 7%);
+  border-radius: 50px;
+  font-size: rem(18);
+  font-weight: 500;
+  transition: opacity 0.2s ease, font-size 0.2s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  @media screen and (min-width: 730px) {
+    font-size: rem(19);
+  }
+}
+
+.btn-primary-blue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(55);
+  padding: rem(10);
+  text-decoration: none;
+  color: $White;
+  background: linear-gradient(to bottom, $LightBlue 94%, #5163d7 7%);
+  border-radius: 50px;
+  font-size: rem(18);
+  font-weight: 500;
+  transition: opacity 0.2s ease, font-size 0.2s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  @media screen and (min-width: 730px) {
+    font-size: rem(19);
+  }
+}
